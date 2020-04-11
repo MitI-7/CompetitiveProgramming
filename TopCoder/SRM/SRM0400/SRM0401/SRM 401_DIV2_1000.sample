@@ -1,0 +1,29 @@
+-- Example 0
+1
+3 abc 1 ab
+
+3
+-- Example 1
+1
+1 babaaba
+
+5
+-- Example 2
+1
+1 ba 1 c 1 bacba 3 cba
+
+3
+-- Example 3
+1
+42 runningletters 42 runningletters 1 running
+
+14
+-- Example 4
+5
+1 b 
+1 a 
+1 b 
+1 a
+ 1 b
+
+2

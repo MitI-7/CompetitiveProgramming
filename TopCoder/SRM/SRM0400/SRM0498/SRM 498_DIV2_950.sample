@@ -1,0 +1,15 @@
+-- Example 0
+"BG*YRGRRYR" 
+"BGGY*YRRRR" 
+
+0
+-- Example 1
+"GBBB*BGBBG" 
+RYYY*YRYYR
+
+9
+-- Example 2
+"RRBR*BRBBB" 
+"BBRB*RBRRR" 
+
+1

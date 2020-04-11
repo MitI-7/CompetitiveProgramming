@@ -1,0 +1,40 @@
+-- Example 0
+TOP
+3
+TIK
+PPPO
+OP
+
+5
+-- Example 1
+EEA
+3
+GEGA
+TOPCODER
+TEST
+
+-1
+-- Example 2
+AB
+2
+ABA
+ABAB
+
+1
+-- Example 3
+FIND
+4
+VERYFAST
+OPINION
+SPENDING
+ODD
+
+3
+-- Example 4
+TOP
+3
+OUTTHERE
+FROM
+NOPQRSTU
+
+0
