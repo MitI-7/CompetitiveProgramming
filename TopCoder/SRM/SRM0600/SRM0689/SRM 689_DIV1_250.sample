@@ -1,0 +1,36 @@
+-- Example 0
+2
+aa
+bb
+
+2
+ba
+ab
+-- Example 1
+2
+xxxx
+xxxx
+
+0
+-- Example 2
+2
+abcd
+abcd
+
+2
+abcd
+dcba
+-- Example 3
+2
+abcdefghijklm
+nopqrstuvwxyz
+
+2
+abcdefghijklm
+nopqrstuvwxyz
+-- Example 4
+2
+aaa
+aab
+
+0
