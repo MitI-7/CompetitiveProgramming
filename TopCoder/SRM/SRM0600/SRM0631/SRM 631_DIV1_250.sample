@@ -1,0 +1,36 @@
+-- Example 0
+2
+WB
+BB
+
+1
+-- Example 1
+2
+WB
+WW
+
+1
+-- Example 2
+2
+WB
+WB
+
+2
+-- Example 3
+4
+WBBW
+WBWB
+WWBB
+BWWW
+
+2
+-- Example 4
+6
+WBBWBB
+BBWBBW
+WWBWBW
+BWWBBB
+WBWBBW
+WWWBWB
+
+1
