@@ -1,0 +1,102 @@
+#!/usr/bin/env python3
+from collections import defaultdict, Counter
+from itertools import product, groupby, count, permutations, combinations
+from math import pi, sqrt
+from collections import deque
+from bisect import bisect, bisect_left, bisect_right
+from string import ascii_lowercase
+from functools import lru_cache
+import sys
+
+sys.setrecursionlimit(500000)
+INF = float("inf")
+YES, Yes, yes, NO, No, no = "YES", "Yes", "yes", "NO", "No", "no"
+dy4, dx4 = [0, 1, 0, -1], [1, 0, -1, 0]  # 右，上，左，下
+dy8, dx8 = [0, -1, 0, 1, 1, -1, -1, 1], [1, 0, -1, 0, 1, 1, -1, -1]  # 右，下，左，上，右上，右下，左下，左上
+
+
+# memo
+# print(f"0埋めで10桁表示: {123:010}")
+# print(f"小数点以下2桁を表示: {123.456:.2f}")
+
+def is_bit_on(bit, i):
+    return (bit >> i) & 1
+
+
+def get_bit_set(bit, i, b):
+    assert (b == 0 or b == 1)
+    if b == 0:
+        return bit & ~(1 << i)
+    else:
+        return bit | (1 << i)
+
+
+def inside(y, x, H, W):
+    return 0 <= y < H and 0 <= x < W
+
+
+def ceil(a, b):
+    return (a + b - 1) // b
+
+
+def sum_of_arithmetic_progression(s, d, n):
+    return n * (2 * s + (n - 1) * d) // 2
+
+
+def gcd(a, b):
+    if b == 0:
+        return a
+    return gcd(b, a % b)
+
+
+def lcm(a, b):
+    g = gcd(a, b)
+    return a // g * b
+
+
+# いまレベルiで，あとx枚食べられる
+def f(i, X, num_b, num_p):
+    if X == 0:
+        return 0
+    if i == 0:
+        return 1
+
+    # レベルiは全部食べられる
+    if num_b[i] <= X:
+        return num_p[i]
+
+    ans = 0
+    X -= 1  # パン
+    if X > 0:
+        ans += f(i - 1, X, num_b, num_p)
+
+    # レベル i - 1の分を引く
+    X -= 2 ** (i + 1) - 3
+
+    if X > 0:
+        ans += 1
+        ans += f(i - 1, X - 1, num_b, num_p)
+
+    X -= 1  # パン
+
+    return ans
+
+
+def solve():
+    N, X = map(int, input().split())
+
+    num_b, num_p = [0] * 60, [0] * 60
+    num_b[0], num_p[0] = 1, 1
+    for i in range(1, 60):
+        num_b[i] = num_b[i - 1] * 2 + 3
+        num_p[i] = num_p[i - 1] * 2 + 1
+
+    print(f(N, X, num_b, num_p))
+
+
+def main():
+    solve()
+
+
+if __name__ == '__main__':
+    main()
